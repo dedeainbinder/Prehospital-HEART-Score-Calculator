@@ -33,7 +33,7 @@ def main():
     mi_history = st.checkbox("History of Myocardial Infarction")
     hf_history = st.checkbox("History of Heart Failure")
     ecg_findings = st.selectbox("Initial ECG Findings", ["Normal", "ST depression", "T-wave inversion"])
-    troponin_level = st.number_input("Initial Troponin Level", min_value=0.0)
+    troponin_level = st.number_input("Initial Troponin Level: Reference Range: If >3, score increases by 2. If >.03, score increase 1. ", min_value=0.0)
 
     if st.button("Calculate"):
         score = calculate_prehospital_heart_score(age, mi_history, hf_history, ecg_findings, troponin_level)
